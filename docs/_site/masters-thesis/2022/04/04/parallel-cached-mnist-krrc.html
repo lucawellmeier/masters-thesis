@@ -2,25 +2,10 @@
 <html lang="en"><head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.8.0 -->
-<title>Parallel and cached computations for MNIST kernel ridge regression experiment | Luca Wellmeier</title>
-<meta name="generator" content="Jekyll v3.9.0" />
-<meta property="og:title" content="Parallel and cached computations for MNIST kernel ridge regression experiment" />
-<meta name="author" content="Luca Wellmeier" />
-<meta property="og:locale" content="en_US" />
-<meta name="description" content="This is a reproduction of a numerical experiment presented in the 2019 paper Just Interpolate: Kernel “Ridgeless” Regression Can Generalize by Tengyuan Liang and Alexander Rakhlin. They argue that interpolating, i.e. having a very small to zero training error, can perform well under certain circumstances, and they analyze asymptotically when this happens in the case of kernel ridge regression. The usage of kernels gives enough freedom to allow interpolation, which is expected to happen in kernel ridge regression if we don’t regularize by setting $\alpha = 0$ (“ridgeless”). I will go into the details of how to see this phenomenon using scikit-learn, exploring parallel computations and smart caching of intermediate products in long computations." />
-<meta property="og:description" content="This is a reproduction of a numerical experiment presented in the 2019 paper Just Interpolate: Kernel “Ridgeless” Regression Can Generalize by Tengyuan Liang and Alexander Rakhlin. They argue that interpolating, i.e. having a very small to zero training error, can perform well under certain circumstances, and they analyze asymptotically when this happens in the case of kernel ridge regression. The usage of kernels gives enough freedom to allow interpolation, which is expected to happen in kernel ridge regression if we don’t regularize by setting $\alpha = 0$ (“ridgeless”). I will go into the details of how to see this phenomenon using scikit-learn, exploring parallel computations and smart caching of intermediate products in long computations." />
-<link rel="canonical" href="http://localhost:4000/masters-thesis/2022/04/04/parallel-cached-mnist-krrc.html" />
-<meta property="og:url" content="http://localhost:4000/masters-thesis/2022/04/04/parallel-cached-mnist-krrc.html" />
-<meta property="og:site_name" content="Luca Wellmeier" />
-<meta property="og:type" content="article" />
-<meta property="article:published_time" content="2022-04-04T00:00:00+02:00" />
-<meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="Parallel and cached computations for MNIST kernel ridge regression experiment" />
-<script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Luca Wellmeier"},"dateModified":"2022-04-04T00:00:00+02:00","datePublished":"2022-04-04T00:00:00+02:00","description":"This is a reproduction of a numerical experiment presented in the 2019 paper Just Interpolate: Kernel “Ridgeless” Regression Can Generalize by Tengyuan Liang and Alexander Rakhlin. They argue that interpolating, i.e. having a very small to zero training error, can perform well under certain circumstances, and they analyze asymptotically when this happens in the case of kernel ridge regression. The usage of kernels gives enough freedom to allow interpolation, which is expected to happen in kernel ridge regression if we don’t regularize by setting $\\alpha = 0$ (“ridgeless”). I will go into the details of how to see this phenomenon using scikit-learn, exploring parallel computations and smart caching of intermediate products in long computations.","headline":"Parallel and cached computations for MNIST kernel ridge regression experiment","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/masters-thesis/2022/04/04/parallel-cached-mnist-krrc.html"},"url":"http://localhost:4000/masters-thesis/2022/04/04/parallel-cached-mnist-krrc.html"}</script>
-<!-- End Jekyll SEO tag -->
-<link rel="stylesheet" href="/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="Luca Wellmeier" /><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.3/dist/katex.min.css" integrity="sha384-KiWOvVjnN8qwAZbuQyWDIbfCLFhLXNETzBQjA/92pIowpC0d2O3nppDGQVgwd2nB" crossorigin="anonymous">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="/assets/css/style.css">
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.3/dist/katex.min.css" integrity="sha384-KiWOvVjnN8qwAZbuQyWDIbfCLFhLXNETzBQjA/92pIowpC0d2O3nppDGQVgwd2nB" crossorigin="anonymous">
   <script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.3/dist/katex.min.js" integrity="sha384-0fdwu/T/EQMsQlrHCCHoH10pkPLlKA1jL5dFyUOvB3lfeT2540/2g6YgSi2BL14p" crossorigin="anonymous"></script>
   <script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.3/dist/contrib/auto-render.min.js" integrity="sha384-+XBljXPPiv+OzfbB3cVmLHf4hdUFHlWNZN5spNQ7rmHTXpd7WvJum6fIACpNNfIR" crossorigin="anonymous"></script>
   <script>
