@@ -1,0 +1,23 @@
+title: Luca Wellmeier
+author:
+  name: Luca Wellmeier
+  email: lucwellm@gmail.com
+description: >
+  blog about my projects and cv
+
+show_excerpts: true
+excerpt_separator: <!--more-->
+
+baseurl: ""
+url: "https://lucawellmeier.github.io"
+
+minima:
+  date_format: "%b %-d, %Y"
+  social_links:
+    github: lucawellmeier
+
+header_pages:
+  - masters-thesis.md
+
+markdown: kramdown
+highlighter: rouge
