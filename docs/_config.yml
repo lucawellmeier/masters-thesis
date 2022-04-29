@@ -9,7 +9,7 @@ show_excerpts: true
 excerpt_separator: <!--more-->
 
 baseurl: ""
-url: "https://lucawellmeier.github.io"
+url: "https://lucawellmeier.github.io/masters-thesis"
 
 minima:
   date_format: "%b %-d, %Y"
