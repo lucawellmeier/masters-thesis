@@ -65,7 +65,7 @@ Links: [paper on arxiv](https://arxiv.org/abs/1906.11300), [paper in PNAS](https
       - In very high- but finite-dimensional spaces eigenvalues can decay arbitrarily slow or not at all because the summability is automatic
   - **Overparametrization** (many low-variance - hence unimportant - directions) is essential for benign overfitting
 - Future directions
-  - What happens in the misspecified case, i.e. $\mathbb{E}[y|x]$ not linear in $x$ (the data is not suitable for linear regression)?
+  - What happens in the misspecified case, i.e. $\mathbb{E}[y \| x]$ not linear in $x$ (the data is not suitable for linear regression)?
   - Can we relax the assumption that the covariates need to be a linear function of a vector of independent RVs? Would help for infinite-dimensional RKHS, for instance
   - Other loss functions besides squared error? Other overfitting estimators beyond the minimum norm interpolating one?
   - Neural networks have uncovered this... Can we say something there?

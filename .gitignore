@@ -3,3 +3,8 @@ docs/.sass-cache
 docs/.jekyll-cache
 docs/.jekyll-metadata
 docs/vendor
+
+experiments/**/cache
+experiments/**/__pycache__
+experiments/**/*.png
+experiments/**/.ipynb_checkpoints
