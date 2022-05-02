@@ -1,7 +1,6 @@
 ---
 layout: post
 title: "Parallel and cached computations for MNIST kernel ridge regression experiment"
-categories: masters-thesis
 
 ---
 

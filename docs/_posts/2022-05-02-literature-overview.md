@@ -1,7 +1,6 @@
 ---
 layout: post
 title: "Literature overview: Benign Overfitting"
-categories: masters-thesis
 published: 2022-04-30
 
 ---
