@@ -164,18 +164,18 @@ That's about the original part of this post. Now, only for reference, we're recr
 
 ### Training and Test Errors
 
-![MNIST KRRC training error](/assets/img/train_errors.png)
+![MNIST KRRC training error]({{ site.baseurl }}/assets/img/train_errors.png)
 
 As expected, the ridgeless regression completely learns the training data ...
 
-![MNIST KRRC test errors](/assets/img/test_errors.png)
+![MNIST KRRC test errors]({{ site.baseurl }}/assets/img/test_errors.png)
 
 ... but surprisingly the test error curve behaves similarly. In all except one of the digit pairs in the graph above ridgeless regression performs the best. In fact, among all the 45 pairs the following have the best test performance for $\alpha$ very small but not zero: `(1,2)`, `(1,4)`, `(1,7)`, `(4,9)`. I suppose this is due to different writing styles of the digits 1, 4 and 7, while the last case is simply the closeness that they might have sometimes.
 
 ### Covariance and Kernel Spectra
 
-![MNIST covariance spectrum](/assets/img/spectrum_covariance.png)
+![MNIST covariance spectrum]({{ site.baseurl }}/assets/img/spectrum_covariance.png)
 
-![MNIST kernel spectrum](/assets/img/spectrum_kernel.png)
+![MNIST kernel spectrum]({{ site.baseurl }}/assets/img/spectrum_kernel.png)
 
 Both graphs are reasonably similar to the ones found by the authors, only that the maximal eigenvalues were a little smaller.
