@@ -12,7 +12,7 @@ baseurl: "/masters-thesis"
 url: "https://lucawellmeier.github.io"
 
 minima:
-  date_format: "%b %-d, %Y"
+  date_format: "%b %-d %Y"
   social_links:
     github: lucawellmeier
 
