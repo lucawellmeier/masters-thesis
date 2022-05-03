@@ -59,7 +59,7 @@ Links: [paper on arxiv](https://arxiv.org/abs/1906.11300), [paper in PNAS](https
 - Main result: find a characterization by bounding the excess risk $R(\hat \theta)$ in terms of eigenvalue structure of the covariance matrix and the training sample size 
   - using two very related notions of **effective ranks**
     $$r_k(\Sigma) = \frac{\sum_{i > k} \lambda_i}{\lambda_{k+1}}, R_k(\Sigma) = \frac{\left( \sum_{i > k} \lambda_i \right)^2}{\sum_{i > k} \lambda_i^2}$$
-    - Relation to norms: lower is sort of $\frac{\ell_1}{\ell_\infty}$, upper is $\frac{\ell_1^2}{\ell_2^2}$
+    - Relation to norms: for $k = 0$ lower is $\frac{\ell_1}{\ell_\infty}$, upper is $\left(\frac{\ell_1}{\ell_2}\right)^2$
   - Define the critical rank $k^\ast = \min\{k\geq 0 \mid r_k(\Sigma) \geq bn \}$
     - If the critical rank is bigger than $n$, then the expected excess risk is larger than the data variance, so assume the opposite from now on
   - Upper bound: with high probability
