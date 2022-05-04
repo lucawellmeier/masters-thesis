@@ -20,4 +20,7 @@ header_pages:
   - masters-thesis.md
 
 markdown: kramdown
+kramdown:
+    math_engine: katex
+
 highlighter: rouge
