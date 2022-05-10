@@ -12,6 +12,7 @@
       renderMathInElement(document.body, {
         delimiters: [
           {left: '\\(', right: '\\)', display: true},
+          {left: '\\[', right: '\\]', display: true},
           // apparently, something in the markdown processing is removing my $$ and replaces them by \( .. \) which is weird... I just go with it for now
           {left: '$', right: '$', display: false},
         ],

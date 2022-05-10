@@ -278,9 +278,11 @@ Links: [paper on arxiv](https://arxiv.org/abs/1903.07571)
   -  modern: training risk 0 but test risk decreases as $p$ grows beyond $n$ (even when fitting noisy data) when using a **suitable inductive bias** like a **least-norm solution**
   - not always the case: but seems like in the modern regime with more parameters and noise it is
 - **Gaussian** model: **linear regression** problem
-  - $$y = \bold{x}^T \bold{\beta} + \sigma \epsilon = \sum_{j=1}^D x_j \beta_j + \sigma \epsilon$$
+  - $y = \bold{x}^T \bold{\beta} + \sigma \epsilon = \sum_{j=1}^D x_j \beta_j + \sigma \epsilon$
   - here $\bold x$ is $D$-dimensional data from a standard Gaussian, $\epsilon$ independent from $\bold x$ is standard Gaussian noise scaled by some positive $\sigma$, and take $n$ IID copies of $(\bold x, y)$ with indexed by superscripts. $\bold X$ be the $n \times D$ design matrix and $\bold y$ the sampled response vector
-  - for $T \subset \{1,\dots,D\}$ with cardinality $p$ let $\hat{\beta}_T = \bold{X}_T^\dagger \bold{y}$ be the usual minimum-norm least-squares solution with all-zeros for the rest of the indices: $\hat{\beta}_{T^c} = 0$. These two compose $\hat \beta$
+  - for $T \subset \{1,\dots,D\}$ with cardinality $p$ let 
+    $$\hat{\beta}_T = \bold{X}_T^\dagger \bold{y}$$
+    be the usual minimum-norm least-squares solution with all-zeros for the rest of the indices: $\hat{\beta}_{T^c} = 0$. These two compose $\hat{\beta}$
   - under these assumptions, we can find explicit expressions for the risk $\mathbb{E}[(y - \bold{x}^T \hat \beta)^2]$
     - if $p \leq n - 2$, then the risk is
       $$(\| \beta_{T^c} \|^2 + \sigma^2) \cdot \left( 1 + \frac{p}{n-p-1} \right)$$
@@ -291,7 +293,7 @@ Links: [paper on arxiv](https://arxiv.org/abs/1903.07571)
   - a straightforward corollary is obtained by sampling $T$ uniformly: in this case, however, the rise of risk for $p$ close to 0 does not happen
   - Proof: the "classical regime" is well-known. The modern regime might be very interesting for me to know. TODO Synthesis. Some keywords: decompose by algebraic property of **pseudo-inverse**, find a orthogonal projection, rotational symmetry of standard normal distribution, **trace trick**, **$\chi^2$ distribution**, **Inverse-Wishart distribution**
   - In this case the authors also prove concentration. For $t > 0$ with probability at least $1-\exp(-t)$:
-    - $\left\lvert \lVert\beta_T\rVert^2 - \frac pD \lVert\beta\rVert^2 \leq \lVert\beta\rVert^2 \left(\sqrt{2\left( \mu^2 - \frac 1D \right) \min\left\{ \frac pD, 1 - \frac pD \right\} t} + \frac{2\mu^2t}{3} \right) \right\rvert$
+    $$\left\lvert \lVert\beta_T\rVert^2 - \frac pD \lVert\beta\rVert^2 \right\lvert \leq \lVert\beta\rVert^2 \left(\sqrt{2\left( \mu^2 - \frac 1D \right) \min\left\{ \frac pD, 1 - \frac pD \right\} t} + \frac{2\mu^2t}{3} \right)$$
     - $\mu = \max_{i \in [D]} \lvert \beta_i \rvert / \lVert \beta \rVert$ has range $[1/\sqrt D, 1]$. Crucial: small when there are many relevant "weak" features (each with small coefficient in $\beta$). Large when $\beta$ is concentrated on a sparse subset of features
 - The analyze a Fourier model afterwards. The regression coefficients are given by by random choice of DFT matrix rows and columns (similar to before).  I will skip this for now. Could be a nice computational exercise.
 - Conclusion and discussion: 
