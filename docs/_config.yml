@@ -3,7 +3,7 @@ author:
   name: Luca Wellmeier
   email: lucwellm@gmail.com
 description: >
-  blog about my projects and cv
+  blog about my thesis
 
 show_excerpts: true
 excerpt_separator: <!--more-->
@@ -15,9 +15,6 @@ minima:
   date_format: "%b %-d, %Y"
   social_links:
     github: lucawellmeier
-
-header_pages:
-  - masters-thesis.md
 
 markdown: kramdown
 kramdown:

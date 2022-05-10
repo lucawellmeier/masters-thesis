@@ -1,10 +1,7 @@
 <!DOCTYPE html>
-<html lang="{{ page.lang | default: site.lang | default: "en" }}">
-
+<html lang="en">
   {%- include head.html -%}
-
   <body>
-
     {%- include header.html -%}
 
     <main class="page-content">
@@ -14,11 +11,9 @@
     </main>
 
     {%- include footer.html -%}
-
     
     <script>
       mermaid.initialize({ startOnLoad: true });
     </script>
   </body>
-
 </html>

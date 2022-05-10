@@ -1,9 +1,13 @@
 ---
-#
-# By default, content added below the "---" mark will appear in the home page
-# between the top bar and the list of recent posts.
-# To change the home page layout, edit the _layouts/home.html file.
-# See: https://jekyllrb.com/docs/themes/#overriding-theme-defaults
-#
-layout: home
+layout: default
+
 ---
+
+# Master's Thesis
+
+{% for post in site.posts %}
+{% if post.url %}
+- [{{ post.title }}]({{ site.baseurl }}{{ post.url }})<br>
+  <small> {% if post.published %} {{ post.published | date: site.minima.date_format }} (last change on {{ post.date | date: site.minima.date_format }}) {% else %} {{ post.date | date: site.minima.date_format }} {% endif %} </small>
+{% endif %}
+{% endfor %}
