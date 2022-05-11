@@ -1,0 +1,36 @@
+---
+layout: default
+
+---
+
+<h1>Master's Thesis</h1>
+
+<h2>Reading notes</h2>
+<p>
+I try to read each paper actively by taking notes. They can be found here.
+See also the <a href="/reading/next-reads.html">updated list of potential next reads</a>.
+</p>
+
+<ul>
+{% for post in site.categories["reading"] %}
+  <li>
+    <a href="{{ post.url }}">{{ post.title }}</a> <small>added on {{ post.date | date: site.minima.date_format }}</small><br>
+    <small>published by {{ post.authors }} in {{ post.year }}</small>
+    <blockquote><small>
+      {{ post.excerpt }}
+    </small></blockquote>
+  </li>
+{% endfor %}
+</ul>
+
+<h2>Experiments</h2>
+<ul>
+{% for post in site.categories["experiments"] %}
+  <li>
+    <a href="{{ post.url }}">{{ post.title }}</a> <small>added on {{ post.date | date: site.minima.date_format }}</small><br>
+    <blockquote><small>
+      {{ post.excerpt }}
+    </small></blockquote>
+  </li>
+{% endfor %}
+</ul>

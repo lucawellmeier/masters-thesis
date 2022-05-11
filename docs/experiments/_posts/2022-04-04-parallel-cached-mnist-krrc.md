@@ -4,7 +4,7 @@ title: "Parallel and cached computations for MNIST kernel ridge regression exper
 
 ---
 
-This is a reproduction of a numerical experiment presented in the 2019 paper [Just Interpolate: Kernel "Ridgeless" Regression Can Generalize](https://arxiv.org/abs/1808.00387) by Tengyuan Liang and Alexander Rakhlin. They argue that interpolating, i.e. having a very small to zero training error, can perform well under certain circumstances, and they analyze asymptotically when this happens in the case of kernel ridge regression. The usage of kernels gives enough freedom to allow interpolation, which is expected to happen in kernel ridge regression if we don't regularize by setting $\alpha = 0$ ("ridgeless"). I will go into the details of how to see this phenomenon using `scikit-learn`, exploring parallel computations and smart caching of intermediate products in long computations. 
+Reprodction of a MNIST experiment from the "Just Interpolate" paper using `scikit-learn` by exploring parallel computations, smart dependency-based job distribution over the CPU cores and caching of intermediate products in long computations. 
 
 <!--more-->
 
