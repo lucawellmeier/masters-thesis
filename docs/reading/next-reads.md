@@ -4,10 +4,19 @@ title: Updated list of potential next reads
 
 ---
 
+Added after the second meeting (11/05/2022)
+- [Rudi, Rosasco 2017] Generalization properties of learning with random features
+- [Rudi, Camoriano, Rosasco 2015] Less is more: Nyström computational regularization
+- [Rudi, Carratino, Rosasco 2017] FALKON: An optimal large-scale kernel method
+- [Meanti, Carratino, Rosasco, Rudi 2020] Kernel methods through the roof: handling billions of points efficiently
+- [Liu, Huang, Chen, Suykens 2020] Random Features for Kernel Approximation: A survey on algorithms, theory and beyond
+- [Belkin 2021] Fit without fear: remarkable mathematical phenomena of deep learning through the prism of interpolation
+- [Bartlett, Montanari, Rakhlin 2021] Deep learning: a statistical viewpoint
+
+Added in the time after the first meeting:
 - [Hastie, Montanari, Rosset, Tibshirani 2019] Surprises in High-Dimensional Ridgeless Least Squares Interpolation
 - [Belkin 2018] Approximation beats Concentration? An approximation view on inference with smooth radial kernels
 - [Belkin, Rakhlin, Tsybakov 2018] Does data interpolation contradict statistical optimality?
-- [Belkin, Hsu, Xu 2019] Two models of double descent for weak features
 - [Jacot, Gabriel, Hongler 2018] Neural Tangent Kernel: Convergence and Generalization in Neural Networks
 - [Du, Zhai, Poczós, Singh 2019] Gradient Descent Provably Optimizes Over-parametrized Neural Networks
 - [Du, Lee, Li, Wang, Zhai 2019] Gradient Descent Finds Global Minima of Deep Neural Networks
