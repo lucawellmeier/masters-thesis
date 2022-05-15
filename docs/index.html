@@ -14,7 +14,7 @@ See also the <a href="{{site.baseurl}}/reading/next-reads.html">updated list of 
 <ul>
 {% for post in site.categories["reading"] %}
   <li>
-    <a href="{{ post.url }}">{{ post.title }}</a> <small>added on {{ post.date | date: site.minima.date_format }}</small><br>
+    <a href="{{site.baseurl}}{{ post.url }}">{{ post.title }}</a> <small>added on {{ post.date | date: site.minima.date_format }}</small><br>
     <small>published by {{ post.authors }} in {{ post.year }}</small>
     <blockquote><small>
       {{ post.excerpt }}
@@ -27,7 +27,7 @@ See also the <a href="{{site.baseurl}}/reading/next-reads.html">updated list of 
 <ul>
 {% for post in site.categories["experiments"] %}
   <li>
-    <a href="{{ post.url }}">{{ post.title }}</a> <small>added on {{ post.date | date: site.minima.date_format }}</small><br>
+    <a href="{{site.baseurl}}{{ post.url }}">{{ post.title }}</a> <small>added on {{ post.date | date: site.minima.date_format }}</small><br>
     <blockquote><small>
       {{ post.excerpt }}
     </small></blockquote>
