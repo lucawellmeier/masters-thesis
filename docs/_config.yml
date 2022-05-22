@@ -1,23 +1,27 @@
-title: Luca Wellmeier
-author:
-  name: Luca Wellmeier
-  email: lucwellm@gmail.com
-description: >
-  blog about my thesis
+title: M.Sc. Thesis
+description: everything related to my thesis
 
-show_excerpts: true
-excerpt_separator: <!--more-->
+show_excerpts: false
+date_format: "%b %-d, %Y"
 
 baseurl: "/masters-thesis"
 url: "https://lucawellmeier.github.io"
 
-minima:
-  date_format: "%b %-d, %Y"
-  social_links:
-    github: lucawellmeier
+menu_items:
+- name: Reading notes
+  url: "#reading-notes"
+- name: Experiments
+  url: "#experiments"
+
+social_links:
+- icon: envelope
+  url: mailto:lucwellm@gmail.com
+  color: "#6c757d"
+- icon: github
+  url: https://github.com/lucawellmeier/masters-thesis
+  color: "#333333"
 
 markdown: kramdown
 kramdown:
     math_engine: katex
-
 highlighter: rouge

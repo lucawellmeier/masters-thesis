@@ -2,18 +2,17 @@
 <html lang="en">
   {%- include head.html -%}
   <body>
-    {%- include header.html -%}
-
-    <main class="page-content">
-      <div class="wrapper">
+    <header>
+      {%- include header.html -%}
+    </header>
+    <main>
+      <div class="container mt-3">
         {{ content }}
       </div>
     </main>
-
-    {%- include footer.html -%}
-    
-    <script>
-      mermaid.initialize({ startOnLoad: true });
-    </script>
+    <footer>
+      {%- include footer.html -%}
+    </footer>
+    {%- include foot.html -%}
   </body>
 </html>
