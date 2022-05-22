@@ -1,8 +1,5 @@
-docs/_site
-docs/.sass-cache
-docs/.jekyll-cache
-docs/.jekyll-metadata
-docs/vendor
+docs/**/_site
+docs/Gemfile.lock
 
 experiments/**/cache
 experiments/**/__pycache__
